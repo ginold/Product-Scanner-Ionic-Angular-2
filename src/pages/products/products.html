@@ -1,0 +1,50 @@
+<ion-content id="products">
+
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+
+  <ion-item>
+    <ion-label class="label-sm">Sort by</ion-label>
+    <ion-select [(ngModel)]="sortByWhat" (ionChange)="sortBy(sortByWhat)">
+      <ion-option value="nameAsc">Name ascending</ion-option>
+      <ion-option value="nameDesc">Name descending</ion-option>
+      <ion-option value="priceAsc">Price ascending</ion-option>
+      <ion-option value="priceDesc">Price descending</ion-option>
+      <ion-option value="type">Type</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="label-sm">Change view</ion-label>
+    <ion-select [(ngModel)]="view" (ionChange)="changeView(view)">
+      <ion-option value="row">
+        <ion-icon name="list"></ion-icon>Rows</ion-option>
+      <ion-option value="squares">
+        <ion-icon name="photos"></ion-icon>Squares</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div id="product-list">
+    <ion-card class="item-row" (click)="goToProductDetails(product.id)" *ngFor="let product of products">
+      <button ion-item>
+
+        <div class="card-content">
+          <ion-item style="background: rgba(0,0,0,0);">
+            <ion-avatar item-start>
+              <img src="assets/images/{{product.img}}">
+            </ion-avatar>
+          </ion-item>
+          <div class="card-info">
+            <h2>{{product.name}}</h2>
+            <p class="price">{{product.price}}
+              <ion-icon name="logo-euro"></ion-icon>
+            </p>
+          </div>
+        </div>
+
+
+      </button>
+    </ion-card>
+  </div>
+
+
+</ion-content>

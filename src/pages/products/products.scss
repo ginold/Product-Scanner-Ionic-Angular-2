@@ -1,0 +1,47 @@
+#products {
+
+}
+
+#product-list {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap row;
+
+    ion-card.item-row {
+        flex-basis: 100%; transition: .3s ease-in-out;
+    }
+
+    ion-card.item-square {
+        flex-basis: 46%; transition: .3s ease-in-out;
+        margin: 5px;
+
+        .card-content {
+            flex-direction: column;
+        }
+        .item-block {
+            width: inherit;
+        }
+        .card-info {
+            white-space: initial;
+        }
+    }
+
+    ion-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-content {
+        display: flex;
+        align-items: center;
+    }
+    .item-block {
+        width: auto;
+    }
+    
+}
+
+.price {
+    display: flex;
+    font-size: 1.2em;
+}
