@@ -1,0 +1,14 @@
+ion-modal {
+  position: relative;
+  width: 80%;
+  margin: 20vh auto;
+  border: 2px solid #eee;
+  height: 60vh;
+
+  .scroll-content {
+    margin-top: 80px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

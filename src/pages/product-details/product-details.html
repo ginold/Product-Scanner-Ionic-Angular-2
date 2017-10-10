@@ -10,5 +10,75 @@
     <img src="assets/images/{{product.img}}">
   </ion-avatar>
   <h2>{{product.name}}</h2>
+  <p>{{product.price}} €</p>
+
   <p>{{product.description}}</p>
+
+  <div *ngIf="product.discount">
+    <p>Get a
+      <ion-badge>{{product.discount}}</ion-badge> discount by scanning this QR code at the cashier's!
+    </p>
+    <button class="discount-button" ion-button outline text-center (click)="saveDiscount(product.id, product.discount)">click here to get discount</button>
+  </div>
+
+  <div *ngIf="product.features">
+    <ion-row>
+      <h3>Features &nbsp;
+        <ion-badge color="secondary">
+          <ion-icon name="information-circle"></ion-icon>
+        </ion-badge>
+      </h3>
+    </ion-row>
+
+    <ion-list>
+        <ion-item *ngFor="let it of product.features">{{it.type}} : {{it.value}}</ion-item>
+      </ion-list>
+  </div>
+
+  <div *ngIf="product.type == 'food'">
+    <ion-row>
+      <h3>Nutrition facts <span>(for 100gr)</span>&nbsp;
+        <ion-badge color="secondary">
+          <ion-icon name="nutrition"></ion-icon>
+        </ion-badge>
+      </h3>
+    </ion-row>
+
+    <ion-list>
+      <ion-item *ngFor="let it of product.nutrition">{{it.type}} : {{it.value}}</ion-item>
+    </ion-list>
+
+    <div *ngIf="product.recipe">
+      <h3>Today's recipe &nbsp;
+        <ion-badge color="secondary">
+          <ion-icon name="restaurant"></ion-icon>
+        </ion-badge>
+      </h3>
+      <h5>{{product.recipe.title}}</h5>
+      <b>Ingredients</b>
+      <p>{{product.recipe.ingredients}}</p>
+      <b>How to</b>
+      <p>{{product.recipe.directions}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="product.fact">
+    <ion-row>
+      <h3>Did you know...
+        <ion-badge color="secondary">?</ion-badge>
+      </h3>
+    </ion-row>
+    <p>{{product.fact}}</p>
+  </div>
+
+  <ion-fab right top>
+    <button ion-fab color="secondary"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

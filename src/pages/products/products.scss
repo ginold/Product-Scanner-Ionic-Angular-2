@@ -18,30 +18,40 @@
         .card-content {
             flex-direction: column;
         }
-        .item-block {
-            width: inherit;
+        button {
+          height: 100%;
         }
-        .card-info {
-            white-space: initial;
+        ion-card-title {
+          font-size: 1.3em;
+          width: 100%;
         }
-    }
 
-    ion-avatar img {
-        width: 80px;
-        height: 80px;
+        ion-label {
+          margin: 0;
+        }
     }
 
     .card-content {
-        display: flex;
-        align-items: center;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .item-block {
-        width: auto;
-    }
-    
+
+}
+ion-card-title {
+  justify-content: space-between;
+  display: flex !important;
+  width: 100%;
+  white-space: normal;
+
+  ion-icon {
+    font-size: 1em;
+  }
+  .price {
+    font-weight: bold;
+    min-width: 45px;
+    margin-left: 5px;
+  }
 }
 
-.price {
-    display: flex;
-    font-size: 1.2em;
-}

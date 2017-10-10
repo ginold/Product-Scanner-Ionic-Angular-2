@@ -1,0 +1,14 @@
+.intro-slider-checkbox {
+  text-align: center;
+  ion-toggle {
+      display: inline-block;
+  }
+}
+
+ion-slide {
+  background: white;
+
+  img {
+    max-height: 60vh !important;
+  }
+}

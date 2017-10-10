@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      My Discounts
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="availableDiscounts.length > 0">
+    <ion-item *ngFor="let d of availableDiscounts">
+      <ion-thumbnail item-start>
+        <img src="assets/images/{{d.img}}">
+      </ion-thumbnail>
+      <h2>{{d.name}}</h2>
+      <p>{{d.discount}} discount</p>
+      <button ion-button clear item-end (click)="viewQRCode()">View QR code</button>
+    </ion-item>
+  </ion-list>
+
+  <h5 *ngIf="availableDiscounts.length == 0" text-center>You have no discounts yet.</h5>
+</ion-content>

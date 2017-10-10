@@ -27,19 +27,15 @@
     <ion-card class="item-row" (click)="goToProductDetails(product.id)" *ngFor="let product of products">
       <button ion-item>
 
-        <div class="card-content">
-          <ion-item style="background: rgba(0,0,0,0);">
-            <ion-avatar item-start>
-              <img src="assets/images/{{product.img}}">
-            </ion-avatar>
-          </ion-item>
-          <div class="card-info">
-            <h2>{{product.name}}</h2>
-            <p class="price">{{product.price}}
-              <ion-icon name="logo-euro"></ion-icon>
-            </p>
-          </div>
-        </div>
+        <img src="assets/images/{{product.img}}">
+        <ion-card-content class="card-content">
+
+          <ion-card-title>
+            <span>{{product.name}}</span>
+            <span class="price">{{product.price}}<ion-icon name="logo-euro"></ion-icon></span>
+          </ion-card-title>
+
+        </ion-card-content>
 
 
       </button>
